@@ -1,0 +1,5 @@
+<div class="mapwrapper">
+	<div class="map" style="background-image: url({{ map.image }});">
+		<div class="zone" style="width: {{ zone.width }}%; height: {{ zone.height }}%; top: {{ zone.top }}%; left: {{ zone.left }}%" ng-repeat="zone in map.zones" ng-click="goto(zone)"></div>
+	</div>
+</div>

@@ -12,6 +12,10 @@ PetsApp.config(function($routeProvider) {
                 templateUrl: 'templates/pet.html',
                 controller: 'petController'
         })
+        .when('/map/:id', {
+                templateUrl: 'templates/map.html',
+                controller: 'mapController'
+        })
         .when('/shop/:id', {
                 templateUrl: 'templates/shop.html',
                 controller: 'shopController'
