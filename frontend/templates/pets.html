@@ -1,8 +1,10 @@
-<div class="petContainer" ng-repeat="pet in pets">
-	{{pet.name}} <br>
-	{{ pet.created }} hours old
-	<img ng-src="{{petModels[pet.type].image}}">
-	{{pet.health}} / 100 health points
-</div>
+<div class="center">
+	<div class="petContainer" ng-repeat="pet in pets">
+		{{pet.name}} <br>
+		{{ pet.created }} hours old
+		<img ng-src="{{petModels[pet.type].image}}">
+		{{pet.health}} / 100 health points
+	</div>
 
-<button ng-click="newPet()">Create new pet</button>
+	<button ng-click="newPet()">Create new pet</button>
+</div>
