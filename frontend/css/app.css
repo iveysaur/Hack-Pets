@@ -25,3 +25,18 @@ img {
   display: block;
   position: absolute;
 }
+
+.petContainer {
+	display: inline-block;
+	margin: 10px;
+	text-align: center;
+}
+.petContainer img {
+	max-height: 250px;
+	display: block;
+}
+
+#chosenPet {
+	display: block;
+	max-width: 250px;
+}
