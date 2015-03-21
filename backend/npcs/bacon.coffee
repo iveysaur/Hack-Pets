@@ -1,3 +1,5 @@
+inventory = require('../models/inventory')
+
 module.exports = (id, user, callback) ->
   if storyObject[id].hook
     storyObject[id].hook(user, callback)
@@ -24,13 +26,14 @@ storyObject = {
   },
   1: {
     hook: (user, callback) ->
-      console.log "hello!"
+      inventory.addItem user.id, 1
       callback
         image: {
           src: "img/bacon.jpg",
           alt: "Bacon!"
         },
-        description: "You approach the bacon and wait for the server to respond. Get it? Server? Hah. You got a " + Math.random()
+        description: "You approach the bacon. Mm, bacon."
+        received_items: [1]
   },
   2: {
     image: {

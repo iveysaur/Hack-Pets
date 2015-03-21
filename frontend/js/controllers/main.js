@@ -1,2 +1,2 @@
-PetsApp.controller("mainController", function() {
+PetsApp.controller("mainController", function($rootScope) {
 });

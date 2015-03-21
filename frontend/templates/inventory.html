@@ -1,0 +1,4 @@
+<div ng-repeat="item in items track by $index">
+	<img ng-src="{{ getItem(item.id).image }}"><br>
+	{{ getItem(item.id).name }}
+</div>

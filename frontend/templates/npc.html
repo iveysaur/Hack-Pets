@@ -5,6 +5,12 @@
 
 {{ state.description }}
 
+<div ng-if="state.received_items">You got:</div>
+<div ng-repeat="item in state.received_items track by $index">
+	<img ng-src="{{ getItem(item).image }}"><br>
+	{{ getItem(item).name }}
+</div>
+
 <div ng-repeat="action in state.actions">
 	<button ng-click="handleAction(action)">{{ action.text }}</button>
 </div>
