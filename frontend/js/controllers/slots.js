@@ -1,4 +1,4 @@
-PetsApp.controller("slotsController", function($scope) {
+PetsApp.controller("slotsController", function($scope, $rootScope) {
     $scope.current = 1;
 
 	var stoppedColors = [];
@@ -42,8 +42,14 @@ PetsApp.controller("slotsController", function($scope) {
 	}
 
     function sendScore() {
+	$scope.won = true;
+	setTimeout(function() {
+	    $scope.won = false;
+	    $scope.$apply();
+	}, 1500);
         post("/api/game/win", { points: 1000 }, function() {
-
+		$rootScope.points += 1000;
+		$rootScope.$apply();
         });
     }
 

@@ -1,4 +1,4 @@
-PetsApp.controller("shopController", function($scope, $routeParams) {
+PetsApp.controller("shopController", function($scope, $routeParams, $rootScope) {
     var update = function() {
         var npc = false;
         if (location.hash.indexOf("npcshop") !== -1) {
@@ -20,6 +20,8 @@ PetsApp.controller("shopController", function($scope, $routeParams) {
     $scope.buy = function(item) {
         get('/api/npcshop/buy/' + $routeParams.id + '/' + item.id, function(result) {
             if (result) {
+                $rootScope.points -= item.price;
+                $rootScope.$apply();
                 update();
             } else {
                 alert("Insufficient funds!");

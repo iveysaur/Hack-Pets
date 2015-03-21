@@ -109,3 +109,21 @@ input[type=text], input[type=password] {
   color: #fff;
 }
 
+.won {
+  font-size: 40px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  top: 120px;
+  z-index: 1000;
+  left: 10px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+}
+.won.hidden {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+

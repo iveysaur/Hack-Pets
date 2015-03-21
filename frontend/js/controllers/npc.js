@@ -1,4 +1,4 @@
-PetsApp.controller("npcController", function($scope, $routeParams, $http) {
+PetsApp.controller("npcController", function($scope, $routeParams, $http, $rootScope) {
     get("/api/npc/start/" + $routeParams.id, function(data) {
         $scope.state = data;
         $scope.$apply();
@@ -14,6 +14,10 @@ PetsApp.controller("npcController", function($scope, $routeParams, $http) {
         get('/api/npc/action/' + $routeParams.id + '/' + action.actionId, function(data) {
                 $scope.state = data;
                 $scope.$apply();
+                get('/api/user/points', function(data) {
+                    if (data != 404) $rootScope.points = data;
+                    $rootScope.$apply();
+                });
         });
     };
 });
