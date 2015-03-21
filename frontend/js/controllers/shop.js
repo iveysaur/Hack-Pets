@@ -7,19 +7,27 @@ PetsApp.controller("shopController", function($scope, $routeParams, $http) {
         },
         items: [
             {
-                name: "Kitten food",
+                id: 0,
+                item_id: 0,
+                price: 40000
+            },
+            {
                 id: 1,
-                image: "img/items/kitten_food.jpg",
+                item_id: 1,
                 price: 400
             },
             {
-                name: "Can of Biss",
                 id: 2,
-                image: "img/items/can.jpg",
+                item_id: 2,
                 price: 400
             }
         ]
     };
+
+    for (var i = 0; i < $scope.shop.items.length; i++) {
+        $scope.shop.items[i].item = Items[$scope.shop.items[i].item_id];
+    }
+
     $scope.buy = function(item) {
         $http.get('/api/buy/' + $routeParams.id + '/' + item.id)
             .success(function(data) {

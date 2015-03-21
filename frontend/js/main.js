@@ -20,6 +20,10 @@ PetsApp.config(function($routeProvider) {
                 templateUrl: 'templates/signup.html',
                 controller: 'signupController'
         })
+        .when('/signin', {
+                templateUrl: 'templates/signin.html',
+                controller: 'signinController'
+        })
         .when('/shop/:id', {
                 templateUrl: 'templates/shop.html',
                 controller: 'shopController'
