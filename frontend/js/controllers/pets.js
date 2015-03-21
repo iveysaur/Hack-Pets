@@ -8,4 +8,8 @@ PetsApp.controller("petsController", function($scope) {
 		}
         $scope.$apply();
     });
+
+    $scope.newPet = function() {
+	location.href = "#/create_pet";
+    };
 });

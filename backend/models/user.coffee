@@ -5,8 +5,9 @@ database = require('../database')
 
 exports.verifyAuth = (userid, authkey, callback) ->
 	this.getUser(userid, (err, rows) ->
-		console.log "authkey: " + authkey + " expected " + rows[0].authkey
 		return callback(false) if err or rows.length < 1 or not rows[0]
+		console.log(authkey)
+		console.log(rows[0].authkey)
 		callback(authkey == rows[0].authkey, rows[0])
 	)
 
@@ -17,7 +18,7 @@ exports.generatePass = (password, callback) ->
 	bcrypt.hash(password, 11, callback)
 
 exports.generateAuthkey = (user) ->
-	user.toString() + crypto.randomBytes(20).toString("hex")
+	user.toString() + crypto.randomBytes(5).toString("hex")
 
 exports.updateUser = (user) ->
 	setString = []

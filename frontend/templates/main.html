@@ -1,6 +1,17 @@
 <div ng-if="!loggedIn">
 	Welcome to HackPets!
+	<button ng-click="signUp()">Sign Up</button>
+	<button ng-click="signIn()">Sign In</button>
 </div>
 <div ng-if="loggedIn">
-	<a href="#/map/0">Explore</a>
+	<a href="#/map/0" class="homepage_gallery">
+		<img src="img/maps/world.jpg" alt="World">
+		<span>Explore the world</span>
+	</a>
+	<a href="#/pets" class="homepage_gallery">
+		<img src="img/pets/roccoli.png" alt="Roccoli">
+		<span>My pets</span>
+	</a>
+	<button ng-click="userProfile()">My profile</button>
+	<button ng-click="signOff()">Sign Off</button>
 </div>

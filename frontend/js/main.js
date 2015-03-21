@@ -61,11 +61,10 @@ PetsApp.controller('siteController', function($rootScope) {
             location.href = "#/";
     };
 	get("/api/user/points", function(data) {
+            if (data != 404) {
 		$rootScope.points = data;
 		$rootScope.$apply();
+            }
 	});
-});
-PetsApp.config(function ($routeProvider, $httpProvider) {
-        $httpProvider.defaults.withCredentials = true;
 });
 

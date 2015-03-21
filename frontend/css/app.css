@@ -56,7 +56,17 @@ button {
   background: #fff;
   color: #333;
   cursor: pointer;
-  width: 90%;
+  width: calc(100% - 8px);
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+input[type=text], input[type=password] {
+  border: solid 1px #777;
+  background: #fff;
+  color: #333;
+  width: calc(100% - 30px);
   padding: 10px;
   margin-top: 10px;
   font-size: 14px;
@@ -82,3 +92,21 @@ button {
 	margin-top: 10px;
 	margin-right: 10px;
 }
+
+.homepage_gallery {
+  display: block;
+  width: calc(100% - 8px);
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.homepage_gallery span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+}
+

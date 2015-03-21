@@ -12,9 +12,9 @@ exports.public_post_signup = (req, body, callback) ->
 			database.query("INSERT INTO users (username, email, password, authkey, created, points) VALUES ('#{ database.escape(body.username) }', '#{ database.escape(body.email) }', '#{ password }', '#{ database.escape(authkey) }', '#{ new Date().getTime() / 1000 }', '0')", (err, rows) ->
 				return callback(null, { status: false}) if err
 
-				sessionid = "#{ rows.insertId }, #{ authkey }"
+				sessionid = "#{ rows.insertId },#{ authkey }"
 
-				callback(null, { status: true, authkey: sessionid, user: rows.insertId})
+				callback(null, { status: true, authkey: sessionid, user: rows.insertId }, { "Access-Control-Allow-Credentials": "true", "Set-Cookie": "D=#{ sessionid }; Path=/; Expires=Wed, 09 Jun 2021 10:18:14 GMT", "Cache-Control": "no-cache" })
 			)
 		)
 	)
@@ -38,3 +38,6 @@ exports.get_info = (req, body, callback) ->
 
 exports.get_points = (req, body, callback) ->
 	callback(null, req.userobj.points)
+
+exports.public_get_signoff = (req, body, callback) ->
+		callback(null, { status: true }, { "Access-Control-Allow-Credentials": "true", "Set-Cookie": "D=; Path=/; Expires=Wed, 09 Jun 2021 10:18:14 GMT", "Cache-Control": "no-cache" })
