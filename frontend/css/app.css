@@ -7,3 +7,21 @@ img {
   vertical-align: top;
   margin: 4px;
 }
+
+.mapwrapper {
+  display: block;
+  height: 700px;
+}
+
+.map {
+  width: 100%;
+  padding-bottom: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.zone {
+  display: block;
+  position: absolute;
+}
