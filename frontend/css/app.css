@@ -59,4 +59,18 @@ button {
   font-size: 14px;
 }
 
+.petContainer {
+	display: inline-block;
+	margin: 10px;
+	text-align: center;
+}
+.petContainer img {
+	max-height: 250px;
+	display: block;
+}
+
+#chosenPet {
+	display: block;
+	max-width: 250px;
+}
 

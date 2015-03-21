@@ -1,0 +1,10 @@
+<div id="chosenPet" class="petContainer" ng-if="chosen">
+	<img ng-src="{{chosen.image}}">
+	{{chosen.name}}<br>
+	<input type="text" ng-model="form.name" placeholder="Pet Name"><br>
+	<button ng-click="createPet()">Create Pet</button>
+</div>
+<div class="petContainer" ng-repeat="pet in pets" ng-click="choosePet($index)">
+	<img ng-src="{{pet.image}}">
+	{{pet.name}}
+</div>

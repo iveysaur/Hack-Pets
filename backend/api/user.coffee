@@ -9,7 +9,7 @@ exports.public_post_signup = (req, body, callback) ->
 		userModel.generatePass(body.password, (err, password) ->
 			authkey = userModel.generateAuthkey(body.username)
 
-			database.query("INSERT INTO users (username, email, password, authkey, created) VALUES ('#{ database.escape(body.username) }', '#{ database.escape(body.email) }', '#{ password }', '#{ database.escape(authkey) }', '#{ new Date().getTime() / 1000 }')", (err, rows) ->
+			database.query("INSERT INTO users (username, email, password, authkey, created, points) VALUES ('#{ database.escape(body.username) }', '#{ database.escape(body.email) }', '#{ password }', '#{ database.escape(authkey) }', '#{ new Date().getTime() / 1000 }', '0')", (err, rows) ->
 				return callback(null, { status: false}) if err
 
 				sessionid = "#{ rows.insertId }, #{ authkey }"
