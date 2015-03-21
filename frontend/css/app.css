@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Short+Stack);
+
 html, body {
   margin: 0;
   padding: 0;
@@ -40,8 +42,9 @@ img {
 .header {
   background: #ffd100;
   color: #000;
-  font-family: 'Pacifico';
+  font-family: 'Short Stack';
   margin-top: -21px;
+  padding-left: 10px;
 }
 
 .center {
