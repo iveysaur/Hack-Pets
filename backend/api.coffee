@@ -8,6 +8,7 @@ endpoints = {}
 endpoints["user"] = require('./api/user')
 endpoints["npc"] = require('./api/npc')
 endpoints["pet"] = require('./api/pet')
+endpoints["pets"] = require('./api/pets')
 endpoints["inventory"] = require('./api/inventory')
 endpoints["npcshop"] = require('./api/npcshop')
 endpoints["game"] = require('./api/game')
