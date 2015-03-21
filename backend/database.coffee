@@ -31,7 +31,7 @@ exports.query = (query, callback, args) ->
 					callback(err, res, args)
 				)
 			else if callback
-				callback(err, rest, args)
+				callback(err, res, args)
 		)
 	catch e
 		if e.message.indexOf "Not connected" != -1
@@ -40,4 +40,6 @@ exports.query = (query, callback, args) ->
 				exports.query(query, callback)
 			, 100)
 
+exports.escape = (string) ->
+	connection.escapeSync(string)
 

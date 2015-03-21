@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.1.0",
+    "crypto": "0.0.3",
     "mysql-libmysqlclient": "^1.6.0"
   }
 }

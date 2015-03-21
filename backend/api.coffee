@@ -1,5 +1,7 @@
 url = require('url')
 
+user = require('./api/user')
+
 module.exports = (request, response, body) ->
 	path = url.parse(request.url).pathname
 	args = path.split("/")
@@ -11,6 +13,8 @@ module.exports = (request, response, body) ->
 	args.splice(0, 2)
 
 	if args[0] is 'signup'
-		console.log "signup!"
-		# do database stuff
+		body = JSON.parse(body)
+		user.signup(request, body, (err, status) ->
+			console.log status
+		)
 
