@@ -1,10 +1,12 @@
 url = require('url')
 
 user = require('./api/user')
+userModel = require('./models/user')
 
 endpoints = {}
 
 endpoints["user"] = require('./api/user')
+endpoints["npc"] = require('./api/npc')
 
 module.exports = (request, response, body) ->
 	path = url.parse(request.url).pathname
@@ -33,7 +35,7 @@ module.exports = (request, response, body) ->
 			response.writeHead(500)
 			response.end(JSON.stringify(err))
 		else
-			response.writeHead(200, headers or { "Cache-Control": "no-cache" })
+			response.writeHead(200, headers or { "Cache-Control": "no-cache", "Access-Control-Allow-Credentials": "true" })
 			response.end(JSON.stringify(result))
 
 	request.body = body
@@ -42,9 +44,10 @@ module.exports = (request, response, body) ->
 	endpoint = endpoints[args[0]]["public_#{ method }_#{ args[1] }"]
 	return endpoint(request, json, callback) if endpoint?
 
+	console.log args
 	if endpoint = endpoints[args[0]]["#{ method }_#{ args[1] }"]
 		s = sessionid.split(',')
-		userModel.verifyAuth(s[0], s[1], (success, userobj) ->
+		userModel.verifyAuth(~~s[0], s[1], (success, userobj) ->
 			if success
 				request.userobj = userobj
 				endpoint(request, json, callback)

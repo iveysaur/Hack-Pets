@@ -32,4 +32,7 @@ PetsApp.config(function($routeProvider) {
 PetsApp.controller('siteController', function() {
 
 });
+PetsApp.config(function ($routeProvider, $httpProvider) {
+        $httpProvider.defaults.withCredentials = true;
+});
 

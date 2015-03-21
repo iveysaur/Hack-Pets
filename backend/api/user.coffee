@@ -24,8 +24,8 @@ exports.public_post_signin = (req, body, callback) ->
 		return callback(null, { status: false }) if not rows[0] or not rows[0].password
 		bcrypt.compare(body.password, rows[0].password, (err, match) ->
 			return callback(null, { status: false}) if err or not match
-			sessionid = "#{ rows[0].id }, #{ rows[0].authkey }"
-			callback(null, { status: true, authkey: sessionid, user: rows[0].id }, { "Set-Cookie": "D=#{ sessionid }; Path=/; Expires=Wed, 09 Jun 2021 10:18:14 GMT", "Cache-Control": "no-cache" }
+			sessionid = "#{ rows[0].id },#{ rows[0].authkey }"
+			callback(null, { status: true, authkey: sessionid, user: rows[0].id }, { "Access-Control-Allow-Credentials": "true", "Set-Cookie": "D=#{ sessionid }; Path=/; Expires=Wed, 09 Jun 2021 10:18:14 GMT", "Cache-Control": "no-cache" }
 			)
 		)
 	)

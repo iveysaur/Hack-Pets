@@ -5,6 +5,7 @@ database = require('../database')
 
 exports.verifyAuth = (userid, authkey, callback) ->
 	this.getUser(userid, (err, rows) ->
+		console.log "authkey: " + authkey + " expected " + rows[0].authkey
 		return callback(false) if err or rows.length < 1 or not rows[0]
 		callback(authkey == rows[0].authkey, rows[0])
 	)
