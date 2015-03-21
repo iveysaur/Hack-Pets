@@ -1,0 +1,11 @@
+<img ng-src="{{ shop.image.src }}" alt="{{ shop.image.alt }}">
+
+{{ shop.greeting }}
+
+<div class="item" ng-repeat="item in shop.items">
+	<img ng-src="{{ item.image }}" alt="{{ item.name }}">
+	<div class="item_name">{{ item.name }}</div>
+	<div class="item_price">{{ item.price }} points</div>
+	<button ng-click="buy(item)">Buy</button>
+</div>
+

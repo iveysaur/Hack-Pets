@@ -34,14 +34,16 @@ PetsApp.controller("npcController", function($scope, $routeParams) {
             actions: [
                 {
                     text: "Eat some!",
-                    goto: 1
                 }
             ]
         }
     };
     $scope.state = $scope.states[0];
     $scope.handleAction = function(action) {
-        $scope.state = $scope.states[action.goto];
+        $scope.state.loading = true;
+        $http.get('/api/npc/' + $routeParams.id + '/' + action.requestId)
+            .success(function(data) {
+                $scope.state = data;
+            });
     };
-
 });
