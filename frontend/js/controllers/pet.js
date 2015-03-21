@@ -1,10 +1,7 @@
 PetsApp.controller("petController", function($scope, $routeParams, $http) {
-    $scope.pet = {
-        name: "Jim",
-        type: {
-            image: "img/pets/octocat.png",
-            name: "Octopus Kitty"
-        },
-        health: 80
-    };
+	$scope.petModel = Pets;
+    get("/api/pets/pet/" + location.hash.split("/")[2], function(data) {
+        $scope.pet = data;
+        $scope.$apply();
+    });
 });

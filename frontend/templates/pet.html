@@ -1,7 +1,7 @@
-<img ng-src="{{ pet.type.image }}" alt="{{ pet.type.name }}">
+<img ng-src="{{ petModel[pet.type].image }}" alt="{{ pet.name }}">
 <div>
 	<b>{{ pet.name }}</b><br>
-	{{ pet.type.name }}<br>
+	{{ petModel[pet.type].name }}<br>
 	{{ pet.health }} / 100
 </div>
 
