@@ -3,7 +3,7 @@ bcrypt = require('bcryptjs')
 database = require('../database')
 userModel = require('../models/user.coffee')
 
-exports.signup = (req, body, callback) ->
+exports.public_post_signup = (req, body, callback) ->
 	database.query("SELECT username FROM users WHERE username = '#{ database.escape(body.username) }'", (err, rows) ->
 		return callback(null, false) if rows.length != 0
 		userModel.generatePass(body.password, (err, password) ->
@@ -19,7 +19,7 @@ exports.signup = (req, body, callback) ->
 		)
 	)
 
-exports.signin = (req, body, callback) ->
+exports.public_post_signin = (req, body, callback) ->
 	database.query("SELECT id, password, authkey FROM users WHERE username = '#{ database.escape(body.username) }'", (err, rows) ->
 		return callback(null, { status: false }) if not rows[0] or not rows[0].password
 		bcrypt.compare(body.password, rows[0].password, (err, match) ->

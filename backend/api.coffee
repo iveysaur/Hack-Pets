@@ -2,27 +2,58 @@ url = require('url')
 
 user = require('./api/user')
 
+endpoints = {}
+
+endpoints["user"] = require('./api/user')
+
 module.exports = (request, response, body) ->
 	path = url.parse(request.url).pathname
 	args = path.split("/")
-	
-	if args[1] is not "api"
-		return
+	method = request.method.toLowerCase()
+	sessionid = request.headers["x-x"] or ""
+
+	return do404(response) if args[1] is not "api"
 
 	# remove '' and 'api'
 	args.splice(0, 2)
 
-	if args[0] is 'signup'
-		return if body == ""
-		body = JSON.parse(body)
-		user.signup(request, body, (err, status) ->
-			console.log status
-			response.end(status)
+	return do404(response) if not endpoints[args[0]]
+
+	json = null
+	if body
+		try
+			json = JSON.parse(body)
+		catch e
+			console.log e
+
+	callback = (err, result, headers) ->
+		if err
+			console.log(err)
+			console.trace()
+			response.writeHead(500)
+			response.end(JSON.stringify(err))
+		else
+			response.writeHead(200, headers or { "Cache-Control": "no-cache" })
+			response.end(JSON.stringify(result))
+
+	request.body = body
+	request.args = args
+
+	endpoint = endpoints[args[0]]["public_#{ method }_#{ args[1] }"]
+	return endpoint(request, json, callback) if endpoint?
+
+	if endpoint = endpoints[args[0]]["#{ method }_#{ args[1] }"]
+		s = sessionid.split(',')
+		userModel.verifyAuth(s[0], s[1], (success, userobj) ->
+			if success
+				request.userobj = userobj
+				endpoint(request, json, callback)
+			else
+				console.log "Auth failed: #{ sessionid }"
+				do404(response)
 		)
-	else if args[0] is 'signin'
-		return if body == ""
-		body = JSON.parse(body)
-		user.signin(request, body, (err, status, session) ->
-			console.log status
-		)
+
+do404 = (response) ->
+	response.writeHead(404)
+	response.end("404")
 
