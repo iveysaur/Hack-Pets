@@ -17,5 +17,6 @@ module.exports = (request, response, body) ->
 		body = JSON.parse(body)
 		user.signup(request, body, (err, status) ->
 			console.log status
+			response.end(status)
 		)
 
