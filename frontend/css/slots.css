@@ -1,0 +1,109 @@
+#game {
+	position: absolute;
+	background-color: #fff;
+	height: 310px;
+	width: 400px;
+	left: 50%;
+	margin-left: -200px;
+	top: 50%;
+	margin-top: -155px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+}
+
+.row {
+	width: 100%;
+}
+
+#top {
+	height: 50px;
+	background-color: #29b6f6;
+	border-bottom: 1px solid #0277bd;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+}
+
+#middle {
+	height: 210px;
+	overflow: hidden;
+}
+
+#bottom {
+	height: 50px;
+}
+
+#stop {
+	position: absolute;
+	width: 303px;
+	line-height: 30px;
+	left: 50%;
+	margin-left: -150px;
+	margin-top: 8px;
+	text-align: center;
+	background-color: #29b6f6;
+	border: 1px solid #0277bd;
+	color: #fff;
+}
+
+#stop:hover {
+	background-color: #039be5;
+	cursor: pointer;
+}
+
+.column {
+	display: inline-block;
+	height: 100%;
+	width: 100px;
+	margin-left: -3px;
+}
+
+#left {
+	margin-left: 0;
+	width: 50px;
+}
+
+.spinner {
+	-webkit-animation: roll .5s infinite linear;
+}
+
+#right {
+	margin-left: -7px;
+	width: 50px;
+}
+
+.slot {
+	width: 100%;
+	height: 70px;
+	outline: 1px solid #333;
+}
+
+.banana {
+	background-color: #FFE135;
+}
+
+.cherry {
+	background-color: #C40000;
+}
+
+.plum {
+	background-color: #8E4585;
+}
+
+.orange {
+	background-color: #FFA500;
+}
+
+.kiwi {
+	background-color: #8ee53f;
+}
+
+@-webkit-keyframes roll {
+	0% {
+		-webkit-transform: translate(0,0);
+	}
+	100% {
+		-webkit-transform: translate(0, -350px);
+	}
+}
+

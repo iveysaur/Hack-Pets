@@ -24,8 +24,8 @@ window.Maps = [
                 href: "/map/3"
         },
         ]
-        },
-        {
+},
+{
         image: "img/maps/northland.jpg",
         zones: [
                 {
@@ -50,8 +50,8 @@ window.Maps = [
                 href: "/npcshop/whimsical"
         },
         ]
-        },
-        {
+},
+{
         image: "img/maps/eastland.jpg",
         zones: [
                 {
@@ -61,4 +61,17 @@ window.Maps = [
                 height: 25,
                 href: "/npc/moneytree"
         },
-]}];
+        ]},
+        {
+                image: "img/maps/palace.jpg",
+                zones: [
+                        {
+                        top: 28,
+                        left: 24,
+                        width: 44,
+                        height: 42,
+                        href: "/slots"
+                },
+                ]
+        }
+];

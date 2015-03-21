@@ -10,6 +10,7 @@ endpoints["npc"] = require('./api/npc')
 endpoints["pet"] = require('./api/pet')
 endpoints["inventory"] = require('./api/inventory')
 endpoints["npcshop"] = require('./api/npcshop')
+endpoints["game"] = require('./api/game')
 
 module.exports = (request, response, body) ->
 	path = url.parse(request.url).pathname
