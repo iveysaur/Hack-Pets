@@ -18,4 +18,10 @@ module.exports = (request, response, body) ->
 		user.signup(request, body, (err, status) ->
 			console.log status
 		)
+	else if args[0] is 'signin'
+		return if body == ""
+		body = JSON.parse(body)
+		user.signin(request, body, (err, status, session) ->
+			console.log status
+		)
 
