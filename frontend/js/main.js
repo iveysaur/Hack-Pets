@@ -56,6 +56,10 @@ PetsApp.controller('siteController', function($rootScope) {
     $rootScope.goHome = function() {
             location.href = "#/";
     };
+	get("/api/user/points", function(data) {
+		$rootScope.points = data;
+		$rootScope.$apply();
+	});
 });
 PetsApp.config(function ($routeProvider, $httpProvider) {
         $httpProvider.defaults.withCredentials = true;

@@ -36,3 +36,5 @@ exports.get_info = (req, body, callback) ->
 		created: req.userobj.created
 	callback(user)
 
+exports.get_points = (req, body, callback) ->
+	callback(req.userobj.points)

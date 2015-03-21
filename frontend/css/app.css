@@ -77,3 +77,8 @@ button {
 	max-width: 250px;
 }
 
+#points {
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
