@@ -1,3 +1,9 @@
 img {
   max-width: 100%;
 }
+
+.item {
+  display: inline-block;
+  vertical-align: top;
+  margin: 4px;
+}

@@ -1,6 +1,8 @@
 <img ng-src="{{ shop.image.src }}" alt="{{ shop.image.alt }}">
 
-{{ shop.greeting }}
+<div>
+	{{ shop.greeting }}
+</div>
 
 <div class="item" ng-repeat="item in shop.items">
 	<img ng-src="{{ item.image }}" alt="{{ item.name }}">
