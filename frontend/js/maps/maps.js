@@ -50,4 +50,15 @@ window.Maps = [
                 href: "/npcshop/whimsical"
         },
         ]
-}];
+        },
+        {
+        image: "img/maps/eastland.jpg",
+        zones: [
+                {
+                top: 70,
+                left: 0,
+                width: 30,
+                height: 25,
+                href: "/npc/moneytree"
+        },
+]}];
