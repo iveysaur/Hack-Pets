@@ -13,6 +13,7 @@ module.exports = (request, response, body) ->
 	args.splice(0, 2)
 
 	if args[0] is 'signup'
+		return if body == ""
 		body = JSON.parse(body)
 		user.signup(request, body, (err, status) ->
 			console.log status

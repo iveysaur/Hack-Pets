@@ -4,17 +4,24 @@ api = require('./api')
 database = require('./database')
 database.init()
 
-mockSignup =
-	username: "test"
-	password: "testlol"
-	email: "test@test.com"
-
 handler = (req, res) ->
 	path = url.parse(req.url).pathname
 
+	runApi = () ->
+		try
+			api(req, res, body)
+		catch e
+			console.log e
+			console.log e.stack
+			console.trace
+			res.writeHead(500)
+			res.end()
+
 	body = ""
-	body = JSON.stringify(mockSignup)
-	api(req, res, body)
+	req.on('data', (data) ->
+		body += data.toString()
+	)
+	req.on('end', runApi)
 
 	res.write("hello")
 	res.end()
