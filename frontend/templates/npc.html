@@ -1,17 +1,19 @@
-<div ng-if="state.image">
-	<img ng-src="{{ state.image.src }}" alt="{{ state.image.alt }}">
-</div>
-<img ng-if="state.loading" alt="Loading spinner" src="img/ajax-loader.gif">
+<div class="center">
+	<div ng-if="state.image">
+		<img ng-src="{{ state.image.src }}" alt="{{ state.image.alt }}">
+	</div>
+	<img ng-if="state.loading" alt="Loading spinner" src="img/ajax-loader.gif">
 
-{{ state.description }}
+	{{ state.description }}
 
-<div ng-if="state.received_items">You got:</div>
-<div ng-repeat="item in state.received_items track by $index">
-	<img ng-src="{{ getItem(item).image }}"><br>
-	{{ getItem(item).name }}
-</div>
+	<div ng-if="state.received_items">You got:</div>
+	<div ng-repeat="item in state.received_items track by $index">
+		<img ng-src="{{ getItem(item).image }}"><br>
+		{{ getItem(item).name }}
+	</div>
 
-<div ng-repeat="action in state.actions">
-	<button ng-click="handleAction(action)">{{ action.text }}</button>
+	<div ng-repeat="action in state.actions">
+		<button ng-click="handleAction(action)">{{ action.text }}</button>
+	</div>
 </div>
 

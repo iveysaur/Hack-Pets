@@ -1,2 +1,3 @@
-PetsApp.controller("mainController", function($rootScope) {
+PetsApp.controller("mainController", function($scope) {
+    $scope.loggedIn = document.cookie != "";
 });

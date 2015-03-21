@@ -37,6 +37,9 @@ PetsApp.controller('siteController', function($rootScope) {
     $rootScope.getItem = function(item) {
         return window.Items[item];
     };
+    $rootScope.goHome = function() {
+            location.href = "#/";
+    };
 });
 PetsApp.config(function ($routeProvider, $httpProvider) {
         $httpProvider.defaults.withCredentials = true;

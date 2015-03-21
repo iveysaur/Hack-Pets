@@ -1,3 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans';
+}
+
+.content {
+  margin: 4px;
+}
+
 img {
   max-width: 100%;
 }
@@ -24,4 +34,29 @@ img {
 .zone {
   display: block;
   position: absolute;
+  background: rgba(100, 100, 100, 0.4);
 }
+
+.header {
+  background: #ffd100;
+  color: #000;
+  font-family: 'Pacifico';
+  margin-top: -21px;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  border: solid 1px #777;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
