@@ -24,13 +24,19 @@ PetsApp.config(function($routeProvider) {
                 templateUrl: 'templates/signin.html',
                 controller: 'signinController'
         })
+        .when('/inventory', {
+                templateUrl: 'templates/inventory.html',
+                controller: 'inventoryController'
+        })
         .when('/shop/:id', {
                 templateUrl: 'templates/shop.html',
                 controller: 'shopController'
         });
 });
-PetsApp.controller('siteController', function() {
-
+PetsApp.controller('siteController', function($rootScope) {
+    $rootScope.getItem = function(item) {
+        return window.Items[item];
+    };
 });
 PetsApp.config(function ($routeProvider, $httpProvider) {
         $httpProvider.defaults.withCredentials = true;
