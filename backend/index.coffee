@@ -1,6 +1,8 @@
 url = require('url')
 
 api = require('./api')
+database = require('./database')
+database.init()
 
 mockSignup =
 	username: "test"
