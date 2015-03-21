@@ -12,7 +12,7 @@ storyObject = {
       src: "img/bacon.jpg",
       alt: "Bacon!"
     },
-    description: "It's a giant omlete.",
+    description: "It's a mound of bacon.",
     actions: [
       {
         text: "Eat some!",

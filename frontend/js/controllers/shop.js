@@ -1,37 +1,29 @@
-PetsApp.controller("shopController", function($scope, $routeParams, $http) {
-    $scope.shop = {
-        greeting: "Hello, buy stuff.",
-        image: {
-            src: "img/pets/octocat.png",
-            alt: "Octopus Kitten"
-        },
-        items: [
-            {
-                id: 0,
-                item_id: 0,
-                price: 40000
-            },
-            {
-                id: 1,
-                item_id: 1,
-                price: 400
-            },
-            {
-                id: 2,
-                item_id: 2,
-                price: 400
-            }
-        ]
-    };
+PetsApp.controller("shopController", function($scope, $routeParams) {
+    var update = function() {
+        var npc = false;
+        if (location.hash.indexOf("npcshop") !== -1) {
+            npc = true;
+        }
 
-    for (var i = 0; i < $scope.shop.items.length; i++) {
-        $scope.shop.items[i].item = Items[$scope.shop.items[i].item_id];
-    }
+        if (npc) {
+            get('/api/npcshop/list/' + $routeParams.id, function(data) {
+                for (var i = 0; i < data.items.length; i++) {
+                    data.items[i].item = Items[data.items[i].item_id];
+                }
+                $scope.shop = data;
+                $scope.$apply();
+            });
+        }
+    };
+    update();
 
     $scope.buy = function(item) {
-        $http.get('/api/buy/' + $routeParams.id + '/' + item.id)
-            .success(function(data) {
-                $scope.shop = data;
-            });
+        get('/api/npcshop/buy/' + $routeParams.id + '/' + item.id, function(result) {
+            if (result) {
+                update();
+            } else {
+                alert("Insufficient funds!");
+            }
+        });
     };
 });

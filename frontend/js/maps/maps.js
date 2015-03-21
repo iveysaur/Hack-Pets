@@ -40,14 +40,14 @@ window.Maps = [
                 left: 65,
                 width: 40,
                 height: 34,
-                href: "/npc/2"
+                href: "/npc/fairy"
         },
         {
                 top: 55,
                 left: 0,
                 width: 40,
                 height: 34,
-                href: "/npc/3"
+                href: "/npcshop/whimsical"
         },
         ]
 }];

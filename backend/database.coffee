@@ -23,6 +23,7 @@ exports.query = (query, callback, args) ->
 	try
 		connection.query(query, (err, res) ->
 			if err
+				console.log err
 				exports.init()
 				exports.query(query, callback)
 				return
@@ -34,11 +35,12 @@ exports.query = (query, callback, args) ->
 				callback(err, res, args)
 		)
 	catch e
+		console.log e.message
 		if e.message.indexOf "Not connected" != -1
 			exports.init()
 			setTimeout(() ->
 				exports.query(query, callback)
-			, 100)
+			, 1000)
 
 exports.escape = (string) ->
 	connection.escapeSync(string)

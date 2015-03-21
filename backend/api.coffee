@@ -8,6 +8,7 @@ endpoints = {}
 endpoints["user"] = require('./api/user')
 endpoints["npc"] = require('./api/npc')
 endpoints["inventory"] = require('./api/inventory')
+endpoints["npcshop"] = require('./api/npcshop')
 
 module.exports = (request, response, body) ->
 	path = url.parse(request.url).pathname
