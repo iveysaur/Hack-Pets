@@ -1,0 +1,11 @@
+<div ng-if="state.image">
+	<img ng-src="{{ state.image.src }}" alt="{{ state.image.alt }}">
+</div>
+<img ng-if="state.loading" alt="Loading spinner" src="img/ajax-loader.gif">
+
+{{ state.description }}
+
+<div ng-repeat="action in state.actions">
+	<button ng-click="handleAction(action)">{{ action.text }}</button>
+</div>
+
