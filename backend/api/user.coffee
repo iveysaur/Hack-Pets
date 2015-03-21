@@ -30,3 +30,9 @@ exports.public_post_signin = (req, body, callback) ->
 		)
 	)
 
+exports.get_info = (req, body, callback) ->
+	user =
+		name: req.userobj.username
+		created: req.userobj.created
+	callback(user)
+

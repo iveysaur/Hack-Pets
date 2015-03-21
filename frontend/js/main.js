@@ -39,6 +39,10 @@ PetsApp.config(function($routeProvider) {
         .when('/npcshop/:id', {
                 templateUrl: 'templates/shop.html',
                 controller: 'shopController'
+        })
+        .when('/user', {
+                templateUrl: 'templates/user.html',
+                controller: 'userController'
         });
 });
 PetsApp.controller('siteController', function($rootScope) {
