@@ -1,9 +1,12 @@
+<center>
 <h2>Create a pet!</h2>
 <h3>Choose which pet breed you like.</h3>
 
 <div class="center">
 	<div id="chosenPet" class="petContainer" ng-if="chosen">
+		<center>
 		<img ng-src="{{chosen.image}}" width="50%">
+		</center>
 		{{chosen.name}}<br>
 		<input type="text" ng-model="form.name" placeholder="Pet Name"><br>
 		<button class="btn btn-large btn-success" ng-click="createPet()">Create Pet</button>
@@ -15,3 +18,4 @@
 	</div>
 	<div id="error" ng-show="error">{{error}}</div>
 </div>
+</center>

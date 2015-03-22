@@ -1,14 +1,16 @@
 <center>
 	<img ng-src="{{ shop.image.src }}" alt="{{ shop.image.alt }}" width = "50%">
-</center>
 <div>
 	{{ shop.greeting }}
 </div>
 
 <div class="item" ng-repeat="item in shop.items">
 	<img ng-src="{{ item.item.image }}" alt="{{ item.item.name }}">
+	<center>
 	<div class="item_name">{{ item.item.name }}</div>
 	<div class="item_price">{{ item.price }} points</div>
 	<button class="btn btn-large btn-primary" ng-click="buy(item)">Buy</button>
+	</center>
 </div>
+</center>
 
