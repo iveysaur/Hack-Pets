@@ -29,7 +29,7 @@ video {
   display: inline-block;
   vertical-align: baseline;
 }
-
+#bottom{position: fixed;right:0;bottom:300px;}
 .item {
   display: inline-block;
   vertical-align: top;

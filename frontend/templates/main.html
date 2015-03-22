@@ -3,9 +3,11 @@
 	<p>Welcome to Hacker Pets!</p>
 </br>
 
-	<button class="btn btn-large bn-primary" ng-click="signUp()">Sign Up</button>
-	<button class="btn btn-large bn-primary" ng-click="signIn()">Sign In</button>
-
+	<button class="btn btn-large btn-success" ng-click="signUp()">Sign Up</button>
+	<button class="btn btn-large btn-primary" ng-click="signIn()">Sign In</button>
+	<div id="bottom">
+		<img src="img/pets/shark.jpg" width="100%">
+	</div>
 	<p></br> © 2015</p>
 </center>
 </div>
@@ -15,11 +17,13 @@
 		<img src="img/maps/world.jpg" alt="World">
 		<span>Explore the world</span>
 	</a>
+</br>
 	<a href="#/pets" class="homepage_gallery">
 		<img src="img/pets/roccoli.png" alt="Roccoli">
 		<span>My pets</span>
 	</a>
-	<button ng-click="userProfile()">My profile</button>
-	<button ng-click="signOff()">Sign Off</button>
+</br>
+	<button class="btn btn-large btn-primary" ng-click="userProfile()">My profile</button>
+	<button class="btn btn-large btn-danger" ng-click="signOff()">Sign Off</button>
 </center>
 </div>

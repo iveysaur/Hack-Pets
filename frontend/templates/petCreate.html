@@ -3,11 +3,11 @@
 
 <div class="center">
 	<div id="chosenPet" class="petContainer" ng-if="chosen">
-		<img ng-src="{{chosen.image}}">
+		<img ng-src="{{chosen.image}}" width="50%">
 		{{chosen.name}}<br>
 		<input type="text" ng-model="form.name" placeholder="Pet Name"><br>
-		<button ng-click="createPet()">Create Pet</button>
-		<button ng-click="unchoose()">Choose Another Pet</button>
+		<button class="btn btn-large btn-success" ng-click="createPet()">Create Pet</button>
+		<button class="btn btn-large btn-success" ng-click="unchoose()">Choose Another Pet</button>
 	</div>
 	<div class="petContainer" ng-repeat="pet in pets" ng-if="!chosen" ng-click="choosePet($index)">
 		<img ng-src="{{pet.image}}">
