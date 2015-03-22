@@ -20,4 +20,8 @@ PetsApp.controller("petCreateController", function($scope) {
 			}
 		})
 	}
+
+	$scope.unchoose = function() {
+		$scope.chosen = null;
+	}
 });
