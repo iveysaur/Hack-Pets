@@ -22,6 +22,6 @@ window.Pets = [
 	{
 		id: 4,
 		name: "Moop",
-		image: "img/pets/moop.png"
+		image: "img/pets/moop.jpg"
 	}
 ];
