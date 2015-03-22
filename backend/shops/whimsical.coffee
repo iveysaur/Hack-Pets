@@ -1,7 +1,7 @@
 module.exports = {
 	greeting: "Welcome to Will's Whimsical Stuff Shop",
 	image: {
-		src: "img/pets/octocat.png",
+		src: "img/pets/Nyancat.png",
 		alt: "Octopus Kitten"
 	},
 	max_items: 10,

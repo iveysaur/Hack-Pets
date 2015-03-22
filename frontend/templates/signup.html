@@ -1,5 +1,18 @@
-<input type="text" ng-model="form.username" placeholder="username"><br>
-<input type="password" ng-model="form.password" placeholder="password"><br>
-<input type="text" ng-model="form.email" placeholder="email"><br>
-<button ng-click="signup()">Sign Up</button>
+<div class="container-fluid">
+<center>
+<div class="col-lg-10">
+	<input class="input-block-level" type="text" ng-model="form.username" placeholder="username">
+</div>
+</br>
+<div class="col-lg-10">
+	<input class="input-block-level" type="password" ng-model="form.password" placeholder="password">
+</div>
+</br>
+<div class="col-lg-10">
+	<input class="input-block-level" type="text" ng-model="form.email" placeholder="email">
+</div>
+</br>
+<a class = "btn btn-large btn-success" ng-click="signup()">Sign Up</a>
+</center>
 <div id="error" ng-show="error">{{error}}</div>
+</div>

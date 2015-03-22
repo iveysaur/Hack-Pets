@@ -1,9 +1,16 @@
 <div ng-if="!loggedIn">
-	Welcome to Hacker Pets!
-	<button ng-click="signUp()">Sign Up</button>
-	<button ng-click="signIn()">Sign In</button>
+	<center>
+	<p>Welcome to Hacker Pets!</p>
+</br>
+
+	<button class="btn btn-large bn-primary" ng-click="signUp()">Sign Up</button>
+	<button class="btn btn-large bn-primary" ng-click="signIn()">Sign In</button>
+
+	<p></br> © 2015</p>
+</center>
 </div>
 <div ng-if="loggedIn">
+	<center>
 	<a href="#/map/0" class="homepage_gallery">
 		<img src="img/maps/world.jpg" alt="World">
 		<span>Explore the world</span>
@@ -14,4 +21,5 @@
 	</a>
 	<button ng-click="userProfile()">My profile</button>
 	<button ng-click="signOff()">Sign Off</button>
+</center>
 </div>
